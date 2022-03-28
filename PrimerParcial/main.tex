@@ -1,0 +1,79 @@
+\documentclass{report}
+\usepackage{graphicx}
+\begin{document}
+\begin{titlepage}
+\centering
+{\bfseries\LARGE Universidad Veracruzana \par}
+\vspace{1cm}
+{\scshape\Large Facultad de Negocios y Tecnolog\'ias  \par}
+\vspace{3cm}
+{\scshape\Huge Reporte T\'enico \par}
+\vspace{3cm}
+{\itshape\Large Paradigmas de Programaci\'on \par}
+\vfill
+{\Large Autor: \par}
+{\Large Fhatima Reyes Alejandre \par}
+\vfill
+{\large Jueves 17 de Marzo 2021 \par}
+
+\end{titlepage}
+
+
+
+\section{ Introducci\'on}
+{\large Un paradigma de programaci\'on consiste en uno o varios enfoques y t\'ecnicas fundamentales para la programaci\'on de software. Es indispensable tener en cuenta esta definici\'on previo al enfoque de este documento, donde se hablar\'a a detalle sobre un tipo de comunicaci\'on en el cual, el objetivo es modelar, codificar y ejemplificar a gran detalle el reconocimiento neuronal mediante patrones que nos brindan las Redes Neuronales Artificiales o mejor conocidas como RNA. Este reportaje consiste en centrar una parte te\'orica lo m\'as clara posible para comprender la parte pr\'actica a trav\'es de la arquitectura y algoritmo que puede presentarse para corroborar su factibilidad con una soluci\'on que dependa de la situaci\'on en la que ser\'a implementada.}
+
+
+\section{Un enfoque hacia RNA y Hopfield}
+{\large La Neurodin\'amica se refiere al estudio de RNA vistas como sistemas dinámicos no lineales, dando \'enfasis en el problema de estabilidad. Las redes neuronales están basadas en el funcionamiento de la neurona biol\'ogica residente en el sistema nervioso central, sus or\'igenes se remontan a los primeros años de la inform\'atica, de manera contempor\'anea a la teor\'ia de la computaci\'on de Turing. Una red neuronal artificial es un modelo computacional inspirado en redes neuronales biol\'ogicas que puede ser considerada como un sistema de procesamiento de informaci\'on con caracter\'isticas como aprendizaje a trav\ès de ejemplos, adaptabilidad, robustez, capacidad de generalizaci\'on y tolerancia a fallos. La red neuronal artificial puede ser definida como una estructura distribuida, de procesamiento paralelo, formada de neuronas artificiales, llamadas tambi\'en elementos de procesamiento, interconectados por un gran numero de conexiones, las cuales son usadas para almacenar conocimiento.
+
+Jhon Hopfield, gracias al trabajo sobre neurofisiolog\'ia en invertebrados, desarroll\'o un tipo de red neuronal autoasociativa. La red de Hopfield es una de las redes neuronales artificiales m\'as importantes y ha influido en el desarrollo de multitud de redes posteriores. Hopfield es un modelo de red con el n\'umero suficiente de simplificaciones como para extraer anal\'iticamente informaci\'on sobre las caracter\'isticas relevantes del sistema, conservando las ideas fundamentales de las redes construidas en el pasado y presentando una serie de funciones b\'asicas de los sistemas neuronales biol\'ogicos.
+
+
+Para este proyecto y con el objetivo de representar el tema abordado, m\'i variable a reconocer en el sistema de red neuronal ser\'an los s\'imbolos de transportes (barco, auto, tren, motocicleta) que ser\'an impresas en una matriz de (10 x 12) con el fin de que el algoritmo sea capaz de detectar dicha simbolog\'ia y pueda notificarnos que ha logrado su cometido mediante un mensaje que contenga dicha figura. La red neuronal de Hopfield es una de las más utilizadas debido principalmente a la facilidad de implementaci\'on f\'isica utilizando tecnolog\'ia de integraci\'on de gran escala. tenemos que poner en practica la formula que nos especifica la probabilidad de la cantidad de informaci\'on que pueden almacenar las neuronas del código.} 
+
+\begin{equation}
+   (n) neuronas (.15)
+\end{equation}
+ 
+{\large Con esta formula podemos centrar la probabilidad de neruronas se encuentran en funcionamiento y que pueden retener la información de cada matriz dentro del c\'odigo. el objetivo es que cada matriz dada pueda representar las figuras deseadas, cada una de ellas con un grosor distinto dependiendo de su tamaño y de lo que representa, todo centrado correctamente en la posisi\'on correspondiente dentro de la matriz. Todo esto con el fin de no hacer repetitivo ningun patron y de que nos brinde el numero exacto de iteraciones igual a 1 para así poder corroborar que la matriz ha quedado fielmente plasmada en el scanner de salida. La siguiente representación nos muestra las figuras que se elaboraron en una hoja de calculo de excel para darle forma a matrices.}
+
+\vspace{1cm}
+
+{\large Tomamos como referencia el siguiente grafico de matrices: 
+
+ \includegraphics[width=\textwidth]{m_excel.png}
+ 
+ Para después llevarlo a cabo en lenguaje m en donde las matrices tuvieron que ser representadas en una sola linea para que la red neuronal fuese capaz de identificar la cantidad de coincidencias entre las matrices que se le presentaban.
+ 
+ \includegraphics[width=\textwidth]{matlab.png}
+ 
+\vspace{0.5}
+ En donde si por ejemplo, queremos mandar a buscar alguna figura de las cuales fueron ingresadas a la red, esta sería capaz de relacionar nuestra b\'usqueda inicial con la matriz almacenada que guarda el mismo patr\'on.
+ 
+ \includegraphics[width=8cm, height=11cm]{barco.png}
+
+Para que la red neuronal fuera capaz de reconocer más figuras se tuvieron que tomar en cuenta puntos importantes como el hecho de que no debía existir algun trazo repetitivo entre cada una de las matrices y si llegaba a haber un percance con el resultado de la figura, era necesaario aumentar el grosor de cada una de las figuras o bien, posicionarlas en una dirección diferente con el objetivo de que ninguna de ellas coincidiera en los trazos. Así mismo también nos fue de mucha utilidad un comando que perfecciono el estado de cada una de las matrices.
+La palabra eye designa a la matriz identidad. Se llevó a cabo la poeración de multiplicar la magnitud de la matriz por su transpuesta y a todo ello se le restaba su matriz identidad nuevamente multiplicada por la magnitud. 
+
+\includegraphics[width=\textwidth]{eye.png}
+ 
+\vspace{1.5} 
+
+Por otra parte y una vez realizado en matlab teniendo todo en orden y con todas las figuras bien representadas en el primer lenguaje, llega el momento en el cual se debe poner a prueba el código, haciendo toda la representación de lo que se trató pero ahora en C++. Viendolo desde esa perspectiva, ya no es algo tan tedioso y dificil de lograr, puesto que al tener como base lo realizado en matlab, simplemente es cuestion de ir sustituyendo valores y de ir agregando todo en orden al nuevo script. Una vez realizando todo ello, nos lleva al momento de representarlo en pantalla de salida, lo que nos da como resultado la siguiente imagen: 
+
+\includegraphics[width=8cm, height=11cm]{c.png}
+
+\newline
+La red neuronal es capaz de reconocer las figuras plasmadas en las matrices en ambos lenguajes, llevandonos así mismo a probar la importancia del uso de Hopfield Las redes de Hopfield, ya que se usa como sistema de memoria asociativa con unidades binarias. Están diseñadas para converger a un mínimo local, pero la convergencia a uno de los patrones almacenados no está garantizada. Pero en este proyecyo nos dedicamos a hacer que funcionara tal cual era el objetivo principal, logrando así que fuese capaz de reconocer siete patrones distintos en una magnitud de 180 neuronas.
+
+Una ventaja significativa es que las redes de Hopfield son bastante tolerantes al ruido, cuando funcionan como memorias asociativas y asi mismo también Prácticamente no existe tiempo de entrenamiento, ya que este no es un proceso adaptativo, sino simplemente el cálculo de una matriz (T).}
+
+
+\newline
+\section{ Concluci\'on}
+ 
+{\large Este modelo puede utilizarse como heurística para resolver problemas de optimización combinatoria, tal como fue el caso de este proyectyo, su objetivo fue recibir un entrenamiento de reconocimiento de patrones con figuras, que la red fuese capaz de analizar cada una de las matrices planteadas y a su vez fuese capaz de determinar cual de todas ellas era la opcion acertada. Para problemas de optimización se ha aplicado para la resolución de manipulación de grafos, por ejemplo el problema del viajante vendedor; resolución de ecuaciones, procesado de señales (conversores analógico-digitales)y de imágenes, etc.
+Fue un gran reto trabajar con un modelo asi y al mismo tiempo nos brindó mucha más experiencia tanto analítica como teórica y práctica, agregando tambine que nos ha dejado una grata experiencia, trabajando sobre dos lenguajes distintos con sintaxis distintas que nos enriquecieron con los distintos modos de resolver problemas de este nivel.}
+
+\end{document}
